@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-escala=1" />
+    <style>
+        * {
+            box-sizing: border-box;
+            /*border: 1px solid gainsboro;*/
+        }
+
+        body {
+            font-family: Roboto, Arial;
+        }
+
+        .icon {
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            background-size: contain;
+        }
+
+        .icon.rain {
+            background-image: url("https://cdn.glitch.com/837e1dde-8f7c-4df4-8d84-9200a53f45cc%2Frain_s_cloudy.png?v=1588942692675");
+        }
+
+        .icon.sunny {
+            background-image: url("https://cdn.glitch.com/837e1dde-8f7c-4df4-8d84-9200a53f45cc%2Fsunny.png?v=1588942701577");
+        }
+
+        .icon.pc {
+            background-image: url("https://cdn.glitch.com/837e1dde-8f7c-4df4-8d84-9200a53f45cc%2Fpartly_cloudy.png?v=1588942697934");
+        }
+
+        .icon.sshowers {
+            background-image: url("https://cdn.glitch.com/837e1dde-8f7c-4df4-8d84-9200a53f45cc%2Frain_s_cloudy.png?v=1588942692675");
+        }
+
+        .icon.cloudy {
+            background-image: url("https://cdn.glitch.com/837e1dde-8f7c-4df4-8d84-9200a53f45cc%2Fcloudy.png?v=1588942708821");
+        }
+
+        .icon.thunder {
+            background-image: url("https://cdn.glitch.com/837e1dde-8f7c-4df4-8d84-9200a53f45cc%2Fthunderstorms.png?v=1588942705076");
+        }
+
+        .tiempo {
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 0px 3px 3px gainsboro;
+            padding: 20px;
+        }
+
+        .tiempo .lugar {
+            font-size: 3em;
+            color: rgb(78, 78, 78);
+        }
+
+        .tiempo .dia,
+        .tiempo .desc,
+        .tiempo .descripcion {
+            color: rgb(78, 78, 78);
+        }
+
+        .tiempo .actual {
+            display: flex;
+            width: 100%;
+        }
+
+        .tiempo .actual .visual,
+        .tiempo .actual .descripcion {
+            width: 50%;
+        }
+
+        .visual {
+            display: flex;
+            color: rgb(78, 78, 78);
+            margin-bottom: 30px;
+        }
+
+        .visual .temp {
+            font-size: 2.5em;
+        }
+
+        .visual .temp {
+            flex: 0;
+        }
+
+        .visual .escala {
+            flex: 1;
+        }
+
+        .visual .icon {
+            width: 64px;
+            height: 64px;
+        }
+
+        .precipitacion::before {
+            content: "Precipitation: ";
+            color: grey;
+        }
+
+        .humedad::before {
+            content: "Humidity: ";
+            color: grey;
+        }
+
+        .viento::before {
+            content: "Wind: ";
+            color: grey;
+        }
+
+        .polen::before {
+            content: "Pollen Count: ";
+            color: grey;
+        }
+
+        .dia-semana .dia {
+            font-weight: bold;
+            font-size: small;
+        }
+
+        .dia-semana .icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .baja {
+            color: grey;
+        }
+
+        .num-polen::before {
+            content: "Pollen: ";
+            color: grey;
+        }
+
+        .num-polen {
+            font-size: small;
+        }
+
+        @media (min-width: 451px) and (max-width: 500px) {
+
+            .actual,
+            .semana>div {
+                border-bottom: 1px solid gainsboro;
+            }
+
+            .semana>div {
+                display: flex;
+                padding: 20px 0px;
+            }
+
+            .semana .dia {
+                font-size: medium;
+                color: black;
+            }
+
+            .dia-semana {
+                display: flex;
+                text-align: center;
+                align-items: center;
+            }
+
+            .dia-semana .dia {
+                flex-grow: 1;
+                width: 100px;
+                text-align: left;
+            }
+
+            .dia-semana .icon {
+                flex-grow: 1;
+            }
+
+            .dia-semana .temp-semana {
+                flex-grow: 1;
+            }
+
+            .dia-semana .num-polen {
+                flex-grow: 1;
+                font-size: medium;
+            }
+        }
+
+        @media (min-width: 501px) and (max-width: 600px) {
+
+            .actual,
+            .semana>div {
+                border-bottom: 1px solid gainsboro;
+            }
+
+            .semana>div {
+                display: flex;
+                padding: 20px 0px;
+            }
+
+            .semana .dia {
+                font-size: medium;
+                color: black;
+            }
+
+            .dia-semana {
+                display: flex;
+                text-align: center;
+                align-items: center;
+            }
+
+            .dia-semana .dia {
+                flex-grow: 1;
+                width: 100px;
+                text-align: left;
+            }
+
+            .dia-semana .icon {
+                flex-grow: 1;
+            }
+
+            .dia-semana .temp-semana {
+                flex-grow: 1;
+                display: flex;
+            }
+
+            .alta,
+            .baja {
+                flex-grow: 1;
+            }
+
+            .dia-semana .num-polen {
+                flex-grow: 1;
+                font-size: medium;
+            }
+        }
+
+        @media (min-width: 601px) {
+            .semana {
+                display: flex;
+                width: 100%;
+            }
+
+            .temp-semana {
+                display: flex;
+            }
+
+            .semana div {
+                width: 100%;
+                text-align: center;
+            }
+
+            .alta,
+            .baja {
+                flex: 0;
+            }
+
+            .alta {
+                margin-left: 20%;
+                margin-right: 15%;
+            }
+
+        }
+
+        @media (min-width: 601px) {
+            .dia-semana .icon {
+                width: 64px;
+                height: 64px;
+            }
+        }
+
+        @media (min-width: 360px) {
+            body {
+                font-size: 1.0em;
+            }
+        }
+
+        @media (min-width: 500px) {
+            .dia-semana .icon {
+                width: 64px;
+                height: 64px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tiempo">
+        <div class="lugar">New York, NY</div>
+        <div class="dia">Tuesday, April 15th</div>
+        <div class="desc">Overcast</div>
+        <div class="actual">
+            <div class="visual">
+                <div class="icon cloudy"></div>
+                <div class="temp">58</div>
+                <div class="escala">&deg;F</div>
+            </div>
+            <div class="descripcion">
+                <div class="precipitacion">100%</div>
+                <div class="humedad">97%</div>
+                <div class="viento">4 mph SW</div>
+                <div class="polen">36</div>
+            </div>
+        </div>
+        <div class="semana">
+            <div class="dia-semana">
+                <div class="dia">Today</div>
+                <div class="icon thunder"></div>
+                <div class="temp-semana">
+                    <div class="alta">68&deg;</div>
+                    <div class="baja">36&deg;</div>
+                </div>
+                <div class="num-polen">36</div>
+            </div>
+            <div class="dia-semana">
+                <div class="dia">Wednesday</div>
+                <div class="icon sunny"></div>
+                <div class="temp-semana">
+                    <div class="alta">50&deg;</div>
+                    <div class="baja">39&deg;</div>
+                </div>
+                <div class="num-polen">36</div>
+            </div>
+            <div class="dia-semana">
+                <div class="dia">Thursday</div>
+                <div class="icon sunny"></div>
+                <div class="temp-semana">
+                    <div class="alta">55&deg;</div>
+                    <div class="baja">39&deg;</div>
+                </div>
+                <div class="num-polen">36</div>
+            </div>
+            <div class="dia-semana">
+                <div class="dia">Friday</div>
+                <div class="icon pc"></div>
+                <div class="temp-semana">
+                    <div class="alta">54&deg;</div>
+                    <div class="baja">43&deg;</div>
+                </div>
+                <div class="num-polen">36</div>
+            </div>
+            <div class="dia-semana">
+                <div class="dia">Saturday</div>
+                <div class="icon sshowers"></div>
+                <div class="temp-semana">
+                    <div class="alta">64&deg;</div>
+                    <div class="baja">46&deg;</div>
+                </div>
+                <div class="num-polen">36</div>
+            </div>
+            <div class="dia-semana">
+                <div class="dia">Sunday</div>
+                <div class="icon sshowers"></div>
+                <div class="temp-semana">
+                    <div class="alta">64&deg;</div>
+                    <div class="baja">50&deg;</div>
+                </div>
+                <div class="num-polen">36</div>
+            </div>
+            <div class="dia-semana">
+                <div class="dia">Monday</div>
+                <div class="icon pc"></div>
+                <div class="temp-semana">
+                    <div class="alta">61&deg;</div>
+                    <div class="baja">50&deg;</div>
+                </div>
+                <div class="num-polen">36</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
