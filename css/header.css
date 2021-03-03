@@ -12,9 +12,10 @@
     margin: 0px;
     padding: 0px;
     font-family: Roboto, "sans-serif";
+    transition: background-color 0.5s, color 0.5s;
 }
 
-header{
+header {
     background-color: #022f53;
     position: fixed;
     top: 0;
@@ -23,16 +24,16 @@ header{
     box-shadow: 0px 0px 8px 0px black;
 }
 
-header .container{
+header .container {
     display: flex;
 }
 
-.container{
+.container {
     width: 70%;
     margin: 0 auto;
 }
 
-.logo{
+.logo {
     vertical-align: middle;
     margin-right: auto;
     text-decoration: none;
@@ -49,12 +50,17 @@ header .container{
     font-size: 18px;
 }
 
-.logo:hover, .dropdown:hover .dropbtn {
+.logo:hover, .dropdown:hover  {
     background-color: #0277bd;
 }
 
-.dropdown {
-    display: inline-block;
+nav {
+    display: flex;
+}
+
+.dropdown{
+    flex: auto;
+    text-align: center;
 }
 
 .dropdown-content {
@@ -62,12 +68,8 @@ header .container{
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px #00000033;
     z-index: 1;
-}
-
-#menu {
-    background-color: #0371b1;
 }
 
 .dropdown-content a {
@@ -79,7 +81,7 @@ header .container{
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #d3d3d3;
 }
 
 .dropdown:hover .dropdown-content {
@@ -87,7 +89,21 @@ header .container{
 }
 
 @media screen and (max-width: 800px) {
-    .container{
+    .container {
         width: 100%;
     }
+    header .container{
+        flex-direction: column;
+    }
+    header .container .logo{
+        margin: 0 auto;
+    }
+}
+
+.disabled * {
+    color: gray;
+}
+
+.disabled:hover {
+    background-color: #022f53 !important;
 }

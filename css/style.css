@@ -1,4 +1,4 @@
-html{
+html {
     min-height: 100%;
     position: relative;
 }
@@ -7,6 +7,73 @@ body {
     background-color: whitesmoke;
 }
 
+main {
+    margin-top: 67px;
+    margin-bottom: 50px;
+}
+
 main .container {
     background-color: white;
+    min-height: 80vh;
+    padding: 40px 0px;
+}
+
+main .container h1 {
+    margin: 0 auto;
+    margin-top: 50px;
+    color: #004c8c;
+    font-size: 40px;
+    font-style: italic;
+    text-align: center;
+    padding: 0px 8px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #0277bd;
+}
+
+main .container p {
+    text-decoration: none;
+    font-size: x-large;
+    padding-top: 70px;
+    text-align: center;
+}
+
+main .container section {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+main .container section a {
+    text-decoration: none;
+    color: rgb(34, 34, 34);
+    flex: auto;
+    display: flex;
+    align-items: center;
+    padding: 10px 80px;
+}
+
+main .container a i{
+    font-size: x-large !important;
+    margin-left: auto;
+}
+
+main .container section a:hover {
+    background-color: #4FC3F7;
+}
+
+@media screen and (max-width: 800px){
+    main .container h1, main .container section{
+        width: fit-content;
+    }
+
+    main .container h3{
+        margin-right: 50px;
+    }
+}
+
+@media screen and (min-width: 801px){
+    main .container h1, main .container section{
+        max-width: 500px;;
+    }
 }

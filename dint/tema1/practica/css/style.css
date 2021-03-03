@@ -1,0 +1,173 @@
+header{
+    background-color: #0277bd;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    color: white;
+    width: 100%;
+    font-variant: small-caps;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+}
+
+footer{
+    background-color: #0277bd;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    color: white;
+    width: 100%;
+    font-variant: small-caps;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+}
+
+header h4, footer h4{
+    display: inline-block;
+}
+
+.ini{
+    float: right;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+header h4,footer h4{
+    margin: 20px;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+section{
+    margin-top: 90px;
+    margin-bottom: 90px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #58a5f0;
+}
+
+section h2{
+    text-align: center;
+    color: #004c8c; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+}
+
+section h3{
+    color: #58a5f0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+}
+
+section div{
+    margin: 0px auto;
+    width: 70%;
+}
+
+.t a{
+    text-align: center;
+}
+
+.ir{
+    color: white;
+    background-color: #0277bd;
+    border-radius: 10px;
+    width: 50px;
+}
+.t a{
+    float: right;
+}
+.t *{
+    display: inline-block;
+}
+
+hr{
+    border-color: #4FC3F7;
+    width: 70%;
+}
+
+.vl{
+    float: right;
+    border-left: 2px solid white;
+    height: 60px;
+}
+
+.menu{
+    width: 70%;
+    height: 60%;
+    overflow-y: auto;
+    margin: 30px auto;
+    font-variant: small-caps;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 15px;
+}
+
+.menu a{
+    background-color: rgba(88, 165, 240,0.8);
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    background-color: #0277bd;
+    color: white;
+}
+
+i{
+    color: #0277bd;
+    font-size: 25px;
+    float: right;
+}
+
+.fa{
+    font-size: 25px;
+}
+
+svg{
+    stroke: #0277bd;
+    float: right;
+}
+
+p{
+    margin: 15px auto;
+}
+#p1,#p2,#p3,#p4,#p5,#p6,#p7{
+    width: 70%;
+    text-align: justify;
+}
+
+#p1{
+    font-family: 'Architects Daughter', cursive;
+}
+
+#p2{
+    font-family: 'Dancing Script', cursive;
+}
+
+#p3{
+    font-family: 'Indie Flower', cursive;
+}
+
+#p4{
+    font-family: 'Lobster', cursive;
+}
+
+#p5{
+    font-family: 'Pacifico', cursive;
+}
+
+#p6{
+    font-family: 'Alfa Slab One', cursive;
+}
+
+#p7{
+    font-family: 'Permanent Marker', cursive;
+}
+
+article{
+    width: 70%;
+    margin: 0px auto;
+    text-align: justify;
+}

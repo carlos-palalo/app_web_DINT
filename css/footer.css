@@ -7,6 +7,7 @@ footer {
 footer .container{
     border-top: 1px solid gainsboro;
     text-align: center;
-    padding: 20px;
+    padding: 20px 0px;
     font-style: italic;
+    background-color: white;
 }
